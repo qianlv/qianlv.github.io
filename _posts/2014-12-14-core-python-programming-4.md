@@ -106,3 +106,31 @@ test_bool(len_zero(1))
         # 整数1的引用都指向同一对象
         print '---------------------------------'
 ![Alt Python-Object2](../../../images/Python-Object2.png)
+
+5. 标准类型分类
+--------------
+***
+# 
+*   Mutable:   List, dict
+*   Immutable: Number, strings, tuple
+
+以下通过id() 值看出字符串和数字都是不可改变，
+都是一个新对象被创建，然后取代就对象
+
+        x = "Python Numbers and Strings"
+        print id(x)
+        x = "are immutable?!? What gives?"
+        print id(x)
+        i = 0
+        print id(i)
+        i = i + 1
+        print id(i)
+
+而列表可以被修改, 以下的id() 值没有改变
+
+        alist['qianlv', 1, 2]
+        id(alist)
+        alist[1] += 1
+        id(alist)
+        alist.append('ABC')
+        id(alist)
