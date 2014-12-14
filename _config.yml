@@ -1,0 +1,13 @@
+permalink: /:year/:month/:title.html    # 博文的固定连接
+paginate: 10                            # 分页时每页博文数量
+author:                                 # 自定义常量
+  name: 肖守冬
+  email: qianlv7@qq.com
+  link: qianlv.github.io
+title: qianlv                           # 自定义常量
+locals:
+  tags: 标签
+  about: 关于
+active: 技术
+subscribe_rss: /pages/atom.xml          # 订阅地址
+markdown: rdiscount                     # markdown解释器
