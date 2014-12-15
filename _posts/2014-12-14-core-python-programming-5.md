@@ -32,6 +32,7 @@ tag: Python, Python Numbers, 笔记, 读书笔记
 *****
 # 
 *   Boolean(布尔型)
+*   "0"开始为八进制数, "0x"或"0X"开始为十六进制数
 *   整型和长整型同一(支持高精)
 
         print 1 << 65
@@ -71,13 +72,11 @@ tag: Python, Python Numbers, 笔记, 读书笔记
 --------------
 *****
 # 
-
-工厂函数:
+工厂函数: 
 
 *   bool(obj)           __nonzero__()方法的返回值
 *   int(obj, base=10)   字符串或数值对象的整数表示
-*   long(obj, base=10)  字符串或数值对象的长整数表示
-*   当obj是字符串时, 可以用base指定进制
+*   long(obj, base=10)  字符串或数值对象的长整数表示当obj是字符串时,可以用base指定进制
 *   float(obj)          字符串或数值对象的浮点数表示
 *   complex(str) or complex(real, imag=0.0) 返回复数表示
 
@@ -106,3 +105,13 @@ tag: Python, Python Numbers, 笔记, 读书笔记
         unichr(1234) # u'\u04d2'
         ord(u'\u04d2') # 1234
 
+7. 伪随即数生成器(random模块)
+------------------
+****
+# 
+
+*   randint(a, b)   返回[a,b]的随机整数
+*   randrange([start,] stop [,step]) 返回随机整数
+*   uniform(a,b)　Get a random number in the range [a, b) or [a, b] depending on rounding.
+*   random()    返回[0, 1) 随机数
+*   choice(seq) 随机返回序列中的一个数
