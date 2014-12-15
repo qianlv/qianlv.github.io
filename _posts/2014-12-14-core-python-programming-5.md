@@ -71,7 +71,6 @@ tag: Python, Python Numbers, 笔记, 读书笔记
 6. 数值工厂函数和内建函数
 --------------
 *****
-# 
 工厂函数: 
 
 *   bool(obj)           __nonzero__()方法的返回值
