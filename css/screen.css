@@ -35,10 +35,12 @@ p {
 }
 
 a {
+  text-decoration:none;
   color: #00a;
 }
 
 a:hover {
+  text-decoration:underline;
   color: black;
 }
 
