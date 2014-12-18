@@ -210,7 +210,36 @@ copy is where only references are copied...no new objects are made!__
     Only call the encode() method right before you write your text to a file, database(数据库),
     or teh network, and only call the decode() method when your are reading it back in.__
 
-*   [对于Unicode理解参考](http://blog.jobbole.com/50345/)
+*   [对于Unicode理解参考](http://www.cnblogs.com/huxi/archive/2010/12/05/1897271.html)
+*   [stackoverflow](http://stackoverflow.com/questions/11339955/python-string-encode-decode/11339995#11339995)
+
+4.  列表(List)
+---------------
+***
+
+>   列表使可修改的(mutable), 可添加任意数量的对象, 对象可以是标准类型或是用户定义的。
+
+    # create and assgin lists
+    aList = [123, 'abc', 456, ['inner', 'list'], 7-9j]
+    antherList = [None, 'something to see here']
+    print list('foo')
+    #['f', 'o', 'o']
+
+    # access values in lists
+    print aList[0]
+    print aList[:3]
+    print aList[3][1]
+
+    # update lists
+    aList[2] = 'float opeator'
+    aList.append('append')
+
+    # remove list elements and lists
+    del aList[1]
+    aList.remove('float opeator')
+    del aList
+    
+>   
 
 
 
