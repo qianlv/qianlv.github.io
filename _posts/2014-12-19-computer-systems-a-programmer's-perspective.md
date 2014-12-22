@@ -175,10 +175,9 @@ however, we can represent the elements of any finite set.
 ###2.4 拓展一个数字的位表示  
 
 1.  零扩展(zero extension): 将无符号数转换为一个更大的数据类型，只需简单地在开头添加0.
-2.  符号扩展(sign extension): 将一个补数字转换为一个更大的数据类型，规则是在表示中添加最高有效位的值的副本
+2.  符号扩展(sign extension): 将一个补数字转换为一个更大的数据类型，规则是在表示中添加最高有效位的值的副本 [Xw-1,Xw-2, ..., X0] -> [Xw-1,Xw-1, ...,Xw-1,Xw-2, ..., X0]
 3.  从一个数据大小到另一个数据大小的转换,以及无符号和有符号数字之间的转换的相对顺序：先改变大小.之后再从改变符号(即先进行上面中的扩展，然后改变位模式的解释方法, C语言标准的要求)
 
-[Xw-1,Xw-2, ..., X0] -> [Xw-1,Xw-1, ...,Xw-1,Xw-2, ..., X0]
 
 [源代码](/code/computer-systems-a-programmers-perspective/zero-sign-extension.c)
 
@@ -236,3 +235,56 @@ __符号扩展证明__:
         // 正确做法 return strlen(s) > strlen(t);
     }
     // 错误原因: size_t 为unsigned int(32位系统), long unsigned int(64位系统)
+
+3.  整数运算
+-----------
+***
+ 
+###3.1 无符号加法
+
+>   无符号运算可以被视为一种形式的模运算.假设两个w位的无符号的数字x,y.加法运算等价于计算模2^w的和.  
+>   也就是简单丢弃x+y的w+1位.
+
+![ALt x+y](/images/unsigned-x-add-y.png)
+![ALt x+y](/images/unsigned-x-add-y2.png)
+
+>   __判断溢出方法:__  
+
+    // 因为s = x + y >= x, 因此如果s没有溢出,可以肯定s >= x.
+    // 如果s溢出了, 那么s = x + y - 2^w 且 y < 2^w 因此 s = x + y - 2^w < x
+    // 故如果s < x, 那么s溢出
+    // 不溢出返回1
+    int uadd_ok(unsigned x, unsigned y)
+    {
+        unsigend s = x + y;
+        return s > x ? 1 : 0
+    }
+
+###3.2 补码加法
+
+>   __两个数的w为补码之和与无符合之和是完全一样的位级表示.__  
+>   本质上通过二进制运算结果截断为w位就是结果  
+>   -2^(w-1) =< x, y =< 2^(w-1) -1
+
+![Alt two-complement-addition](/images/two-complement-addition.png)
+![Ali two-complement-addition-2](/images/two-complement-addition-2.png)
+
+>   溢出情况:  x, y都是负数时, x + y >= 0时负溢出. x, y都是正数时, x + y < 0时正溢出.
+
+    int tadd_ok(int x, int y)
+    {
+        int s = x + y;
+        if (x < 0 && y < 0 && s >= 0)
+            return 0;
+        if (x > 0 && y > 0 && s < 0)
+            return 0;
+        return 1;
+    }
+    
+    // 补码加法也会形成阿贝尔群是, (x + y) - x求值得到y,无论加法是否溢出
+    // 也可以通过二进位模式看出,这个函数无法判断是否溢出
+    int tadd_ok(int x, int y)
+    {
+        int sum = x + y;
+        return (sum - x == y) && (sum - y == x)
+    }
