@@ -264,12 +264,12 @@ __符号扩展证明__:
 
 >   __两个数的w为补码之和与无符合之和是完全一样的位级表示.__  
 >   本质上通过二进制运算结果截断为w位就是结果  
->   -2^(w-1) =< x, y =< 2^(w-1) -1
+>   -2^(w-1) ≤ x, y ≤ 2^(w-1) -1
 
 ![Alt two-complement-addition](/images/two-complement-addition.png)
 ![Ali two-complement-addition-2](/images/two-complement-addition-2.png)
 
->   溢出情况:  x, y都是负数时, x + y >= 0时负溢出. x, y都是正数时, x + y < 0时正溢出.
+>   溢出情况:  x, y都是负数时, x + y ≥ 0时负溢出. x, y都是正数时, x + y < 0时正溢出.
 
     int tadd_ok(int x, int y)
     {
@@ -288,3 +288,39 @@ __符号扩展证明__:
         int sum = x + y;
         return (sum - x == y) && (sum - y == x)
     }
+
+###3.3 二进制补码的非
+
+>   x的范围-2^(w-1) ≤ x < 2^(w-1)  
+1.  x ≠ -2^(w-1), 加法逆元就是 -x  
+2.  x = -2^(w-1) = TMinw, 那么-x = 2^(w-1)(溢出),此处为负溢出的情况，故-2^(w-1) + -2^(w-1) + 2^w  = -2^w+2^w = 0  
+
+![Alt two-complement-negation](/images/two-complement-negation.png)
+
+>   求二进制补码非的值方法: 
+
+1. 按位取反,结果加1(~x+1), 证明如下:
+
+![Alt two-complement-negation-method](/images/two-complement-negation-method.png)
+2. 假设第k位是最右1的位置, 如果x位级表示[Xw-1, Xw-2,...,Xk+1, 1, 0,...,0] 那么它的非二进制格式为[~Xw-1, ~Xw-2, ..., ~Xk+1, 1, 0,...,0]
+
+###3.4 无符号乘法
+
+>   x,y为w位的无符号数字，x * y等价于x * y mod 2^w
+
+###3.5 二进制补码乘法
+
+>   对于无符号和二进制补码乘法来说, 乘法运算的位级表示都是一样的, __本质上就是在二进制模式不区分有无符号, 只是最后位模式解释的区别__
+>   对于两个长度w的位向量*x*, *y*, 假设x = B2Tw(*x*), y = B2Tw(*y*), x' = B2Uw(*x*), y' = B2Uw(*y*)  
+>   那么x' = x + x(w-1) * 2^w, y' = y + y(w-1) * 2^w。
+
+![Alt two-complement-multiplication-prove](/images/two-complement-multiplication-prove.png)
+
+###3.6 乘以常数
+
+>   x左移位k位结果等价于x * 2^k,由于整数乘法指令相当慢，编译器通过移位和加法运算组合来替代乘以常数因子  
+>   例如: x * 14 = (x << 3) + (x << 2) + (x << 1) 或 (x << 4) - (x << 1)
+
+###3.7 除以2的幂
+
+
