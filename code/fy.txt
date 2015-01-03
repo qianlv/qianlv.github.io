@@ -1,0 +1,10 @@
+    我们展示了一个相对简单的固定参数的算法用于解决GROUP FEEDBACK VERTEX SET,它的时间
+复杂度为O*(2^O(klogk)). 我们的算法甚至工作在一个健壮的Oracle模型下,它允许我们用概况
+最近对于GROUP FEEDBACK VERTEX SET算法在相同的复杂度范围内.
+    我们注意到, 如果我们用g和g^-1的字符串代表Group中的元素(正式的，我们进行计算在自由Group上的生成元对应图的弧),
+然后细微的修改我们的算法后, 我们可以解决GROUP FEEDBACK VERTEX SET问题即使是无限的Groups对于字符问题(word problem???).
+查看问题无论两个序列乘积是否相等都可以在多项式时间内解决。群的元素在计算创建表示的长度可以有界线性输入图形的大小。
+因此，如果一个群可以在用一个多项式时间算法解决的话,那么我们就把这个算法当作oracle
+    我们的算法和GROUP FEEDBACK VERTEX SET算法都无法使时间复杂度加速到O*(2^O(k)). 这些问题
+可以被解决在O*(2^O(k))时间内吗？或可以证明，这样的结果会违反指数时间的假设?
+    致谢，感谢Stefan Kratsch和Magnus Wahlstrom对于图论分离问题的启发性讨论和让我们关注到GROUP FEEDBACK VERTEX SET问题

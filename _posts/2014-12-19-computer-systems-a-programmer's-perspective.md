@@ -323,4 +323,11 @@ __符号扩展证明__:
 
 ###3.7 除以2的幂
 
+4. 浮点数
+------------
 
+###4.1  二进制小数
+
+![Alt fractional-binary-numbers](/images/fractional-binary-numbers.png)
+
+###4.2 IEEE浮点表示
