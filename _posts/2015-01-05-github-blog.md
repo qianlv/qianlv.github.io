@@ -22,12 +22,12 @@ tag: github, blog
     `
 3. 第一个方法步骤:
 1. 在前面username.github.io项目中,进入settings(如下图红圈位置)
-[!Alt github-settings](/images/github-blog-settings.png)
+![Alt github-settings](/images/github-blog-settings.png)
 2. 然后在Automatic page generator按钮就生成一个github博客
-[!Alt github-automatic](/images/github-blog-automatic.png)
+![Alt github-automatic](/images/github-blog-automatic.png)
 4. 第二个方法步骤:
 1. 本地搭建一个jekll
-    
+  `  
     #安装ruby(1.9.3以上)
     sudo apt-get install ruby1.9.3
     ruby -v 
@@ -41,7 +41,7 @@ tag: github, blog
     #安装jekll 
     sudo gem install jekyll
     sudo gem install rdiscount #markdown解释器
-
+`
 2. 学习jekll的使用
 [教程](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html), 通过这个教程了解jekll各种目录的
 功能和使用,通过前面本地安装的jekll查看是否成功`jekll server`，其实不必要完全搭建整个项目,了解jekll一些基本使用后可以fork别人的jekll模板.
