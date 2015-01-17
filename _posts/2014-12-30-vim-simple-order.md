@@ -39,3 +39,6 @@ tag: vim, note
 6. 在Replace模式下<backspace>键, 可以恢复原来的字符  
 7. '~' 切换大小写  
 8. 'I' 所在行第一个非空白字符处并Insert模式, 'A' 行末Insert  
+9.  di[标记], di( 删除圆括号内的内容, 类似di{, di", di' 
+10. dt[标记], 删除当前光标到标记之间的内容
+11. :w !sudo tee % 以root方式保存
