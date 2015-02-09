@@ -42,3 +42,5 @@ tag: vim, note
 9.  di[标记], di( 删除圆括号内的内容, 类似di{, di", di' 
 10. dt[标记], 删除当前光标到标记之间的内容
 11. :w !sudo tee % 以root方式保存
+12. guu 行小写 gUU 行大写 g~~ 行翻转, gUw/gUe 字大写, guw/gue 字小写
+13. g是大小写转换命令(greate), u/U/~(小写/大写/翻转)
