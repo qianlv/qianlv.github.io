@@ -44,3 +44,11 @@ tag: vim, note
 11. :w !sudo tee % 以root方式保存
 12. guu 行小写 gUU 行大写 g~~ 行翻转, gUw/gUe 字大写, guw/gue 字小写
 13. g是大小写转换命令(greate), u/U/~(小写/大写/翻转)
+
+3.  定制vimrc
+-------------
+
+1.  `set nocompatible` vim增强模式，不完全兼容vi
+2.  `set backspace=indent, eol, start` Insert模式下backspace键何时可以删除字符,   
+    indent:删除set indent; set ai等自动缩进, eol:删除断行, start:用于删除进入Insert模式之前的字符  
+
