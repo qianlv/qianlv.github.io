@@ -42,8 +42,8 @@ tag: github, blog
         ruby -v 
         #安装bundler
         #切换ruby的源，否则可能无法安装(已被G_F_W)
-        gem sources --remove https://rubygems.org/
-        gem sources -a https://rubygems.org/
+        gem sources --remove http://rubygems.org/
+        gem sources -a http://ruby.taobao.org/ 
         gem sources -l 
         sudo gem install bundler
         #[详细安装方法参考]
