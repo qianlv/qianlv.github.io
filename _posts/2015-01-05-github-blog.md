@@ -51,6 +51,8 @@ tag: github, blog
         #安装jekll 
         sudo gem install jekyll
         sudo gem install rdiscount #markdown解释器
+        #安装nodejs
+        sudo apt-get install nodejs
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. 学习jekll的使用  
 
