@@ -1,6 +1,7 @@
 _site/*
 *.swp
 *.swo
+*~
 _drafts/
 .DS_Store
 
