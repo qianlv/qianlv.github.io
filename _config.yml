@@ -10,4 +10,4 @@ locals:
   about: 关于
 active: 技术
 subscribe_rss: /pages/atom.xml          # 订阅地址
-markdown: rdiscount                     # markdown解释器
+markdown: kramdown                      # markdown解释器
