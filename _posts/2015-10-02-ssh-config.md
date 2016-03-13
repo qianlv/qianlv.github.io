@@ -63,9 +63,32 @@ ssh 配置的格式:
 ssh-agent 一个私钥管理程序，通过ssh-add添加私钥。
 ssh连接是通过ssh-agent来完成认证，这样如果私钥本身有密码，就不需要每次连接时都输入。
 [如何启动ssh-agent](http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent)
+[ssh-agent needs to start each time on my server](http://serverfault.com/questions/593040/ssh-agent-needs-to-start-each-time-on-my-server)
+一个启动ssh-agent的脚本:
 
 ```
-    eval 'ssh-agent -s' 启动ssh-agent
+    function set_ssh_agent()
+    {
+        for P in /tmp/ssh-*/agent.*
+        do  
+            if [ -O "$P" ] && [ -O "$(dirname "$P")" ];
+            then
+                pid=${P#*agent.}
+                echo "$P"
+                SSH_AUTH_SOCK=$P; export SSH_AUTH_SOCK;
+                SSH_AGENT_PID=$pid; export SSH_AGENT_PID;
+                return 0
+            fi  
+        done
+        return 1
+    }
+
+    set_ssh_agent
+    if [ $? == "1" ]; then
+        eval `ssh-agent -s`
+        set_ssh_agent
+        ssh-add # You key
+    fi    
 ```
 
 ## 3. 跳板机密钥问题
