@@ -56,9 +56,9 @@ Example:
 
 最终生成 R 个输出文件,这些文件可以用于另一个 MapReduce 调用.
 
-![Execution Overview](../images/MapReduce Execution overview.png)
+![Execution Overview](/images/MapReduce Execution overview.png)
 
-####Master Data Structures
+#### Master Data Structures
 
 1. master 存储 map task 和 reduce task 的 state(idle, in-progress or completed) 和 no-idle state task 的worker 机器的标识(identity)
 2. master 是传递 map tasks 产生中间文件区域给 reduce tasks 的管道, 故存储了R 个中间文件区域的位置和大小为每个 map task. 
