@@ -1,10 +1,8 @@
 ---
 layout: post
-title: MIT6.824 MapReduce 笔记
-tag: vim, note
+title: MIT6.824 GFS 笔记
+tag: gfs, note
 ---
-{{ page.title }}
-============
 
 ## MapReduce 论文
 
