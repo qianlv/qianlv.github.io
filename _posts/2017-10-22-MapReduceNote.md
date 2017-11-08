@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MIT6.824 GFS 笔记
+title: MIT6.824 MapReduce 笔记
 tag: gfs, note
 ---
 
