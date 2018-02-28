@@ -19,7 +19,7 @@
 
 Mean 容易受到outlier（离群值, 明显不同的值，源于测量错误或其他原因)的影响，而偏离, 例如 3, 3, 3, 3, 100 中的 100 这个离群值。
 
-#### Sample（样本）和 Population（总体）
+#### Sample (样本) 和 Population (总体)
 
 样本用于估计总体，总体一般无法统计。
 
@@ -27,11 +27,11 @@ Mean 容易受到outlier（离群值, 明显不同的值，源于测量错误或
 
 $\overline{X}$ = Sample Mean = $\frac{1}{n}\sum_{i=1}^nx_i$
 
-#### 总体方差
+#### Population (总体方差)
 
 Measures of dispersion(离中趋势衡量，其他数字与集中趋势数值的关系情况), 衡量方式：Variance 方差
 
-总体方差 $\sigma^2 = \frac{1}{N}\sum_{i=1}^N(x_i - \mu)^2$
+总体方差 $\sigma^2 = \frac{1}{N}\sum_{i=1}^N(x_i - \mu)^2​$
 
 #### Sample Variance(样本方差)
 
@@ -39,3 +39,30 @@ Measures of dispersion(离中趋势衡量，其他数字与集中趋势数值的
 
 直观理解样本方差通常会低估总体方差，所以除以 n-1 比 n 更好。[解释](https://www.zhihu.com/question/20099757)
 
+#### Standard Variance(标准差)
+
+$\sigma = \sqrt{\sigma^2}$
+
+$S  = \sqrt{S^2}$
+
+#### 方差公式转换
+
+$ \sigma^2 = \frac{1}{N}\sum_{i=1}^N(x_i - \mu)^2 = \frac{1}{N}\sum_{i=1}^N{x_i}^2 - \mu^2$
+
+#### 随机变量
+
+大写字母表示，用于区分传统的变量。
+
+从随机过程映射道数值的函数, 如 
+$$
+X = \begin{cases}
+1, if \ rainning\ tomorrow \\
+0, don't\ rain
+\end{cases}
+$$
+或 X = 骰子抛出的数值
+
+分为：
+
+1. 离散(Discrete)随机变量: 变量个数有限。
+2. 连续(Continiu)随机变量: 变量范围可能有限，但个数无限。
